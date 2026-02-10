@@ -9,12 +9,12 @@ app = FastAPI()
 
 # --- إعدادات Supabase ---
 SUPABASE_URL = "https://xeqptybimdbstpturgvc.supabase.co"
-SUPABASE_KEY = "sb_publishable_vax-h0FYB0Xu2QUfWivnvw_fEUHoVan" # المفتاح السري (Service Role)
+SUPABASE_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhlcXB0eWJpbWRic3RwdHVyZ3ZjIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3MDYzMzg2MiwiZXhwIjoyMDg2MjA5ODYyfQ.xbFwC9PL9_OuCtY7mdYdjjkiSwfM6upMddMHhnqURxM" # المفتاح السري (Service Role)
 supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 # --- إعدادات OneSignal ---
 ONESIGNAL_APP_ID = "2eeb59a2-7292-43aa-961e-f40fc3239677"
-ONESIGNAL_REST_KEY = "os_v2_app_f3vvtitssjb2vfq66qh4gi4wo5x5tjdf5otehdefd6ecvnnt22j3ki7y7l5g5rzedckqyntga6f7pfinexj6bzdua5fvk6jbgcxg2hi"
+ONESIGNAL_REST_KEY = "os_v2_app_f3vvtitssjb2vfq66qh4gi4wo53ffhh5cdbu4q5zgyjilfbw6wzxfsmsufeijqmkydzxqjkjo4234qcplfzxzds3ke7a4wnjiocycha"
 
 class MotionData(BaseModel):
     status: str
@@ -38,6 +38,7 @@ def send_onesignal_alert(camera_name, image_url):
     }
     try:
         response = requests.post(url, headers=headers, json=payload)
+        print(f"OneSignal Response Status: {response.status_code}")
         return response.status_code
     except Exception as e:
         print(f"OneSignal Error: {e}")
@@ -78,5 +79,4 @@ async def get_latest_image():
 
 if __name__ == "__main__":
     import uvicorn
-
     uvicorn.run(app, host="0.0.0.0", port=8800)
