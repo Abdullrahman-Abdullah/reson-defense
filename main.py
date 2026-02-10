@@ -14,7 +14,7 @@ supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 
 # --- إعدادات OneSignal ---
 ONESIGNAL_APP_ID = "2eeb59a2-7292-43aa-961e-f40fc3239677"
-ONESIGNAL_REST_KEY = "os_v2_app_f3vvtitssjb2vfq66qh4gi4wo4vvu7cyqm5u4vv4jtzekksnqcjds52au6erdpkyzlstcnnlvbebpwoj6ptvmcvuxydhzu65ay7g6oq"
+ONESIGNAL_REST_KEY = "os_v2_app_f3vvtitssjb2vfq66qh4gi4wo5x5tjdf5otehdefd6ecvnnt22j3ki7y7l5g5rzedckqyntga6f7pfinexj6bzdua5fvk6jbgcxg2hi"
 
 class MotionData(BaseModel):
     status: str
@@ -78,4 +78,5 @@ async def get_latest_image():
 
 if __name__ == "__main__":
     import uvicorn
+
     uvicorn.run(app, host="0.0.0.0", port=8800)
