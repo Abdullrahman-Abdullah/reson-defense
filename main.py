@@ -15,7 +15,7 @@ supabase = create_client(SUPABASE_URL, SUPABASE_KEY)
 # --- إعدادات OneSignal ---
 ONESIGNAL_APP_ID = "2eeb59a2-7292-43aa-961e-f40fc3239677"
 # ضع هنا المفتاح الذي يبدأ بـ os_v2_app... الذي نسخته وظهر لك لمرة واحدة
-ONESIGNAL_REST_KEY = "os_v2_app_f3vvtitssjb2vfq66qh4gi4wo7ztonsucpbu6q4kj6mdjctfjbchm7rwcokc72e3zt7m4pgyk7zyr62gae2caki23ojrijttjq3dxea" 
+ONESIGNAL_REST_KEY = "os_v2_app_f3vvtitssjb2vfq66qh4gi4wo6hf6nveogsefdm4yp6wvjc3k6qfswqzx3tebguk734vmhnvhjz5zv6vpak6cm6nsb65xlw4efloi7a" 
 
 class MotionData(BaseModel):
     status: str
@@ -92,3 +92,4 @@ async def get_camera_ip():
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8800)
+
